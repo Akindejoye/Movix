@@ -16,7 +16,7 @@ const Register = () => {
       <div className="register_box">
         <img src={Dice} alt="Logo" />
         <h1>Hi, Welcome</h1>
-        <span>Please sign-in to your account and start your experience</span>
+        <span>Please sign-up to your account and start your experience</span>
         <form className="regForm">
           <div>
             <CustomInput
