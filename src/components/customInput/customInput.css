@@ -1,0 +1,38 @@
+input {
+  width: 100%;
+  height: 51px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  color: var(--clr-black);
+  padding: 0px 12px 0px 12px;
+  background-color: var(--white);
+  outline: none;
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+}
+
+input:active,
+input:focus,
+input:hover {
+  border: 1px solid var(--gray-500);
+}
+
+input::placeholder {
+  color: var(--gray-200);
+}
+
+.input-errorMessage {
+  display: block;
+  padding-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: var(--clr-red);
+  display: none;
+}
+
+input:invalid[focused="true"] ~ .input-errorMessage {
+  display: block;
+}
