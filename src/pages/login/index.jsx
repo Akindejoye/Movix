@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import CustomInput from "../../components/customInput/CustomInput";
 import Dice from "../../assets/images/dice.svg";
 import Eye from "../../assets/images/eye.svg";
@@ -16,7 +17,7 @@ const Login = () => {
       <div className="login_box">
         <img src={Dice} alt="Logo" />
         <h1>Hi, Welcome</h1>
-        <span>Please sign-in to your account and start your experience</span>
+        <span>Please sign-up to start your experience</span>
         <form className="loginForm">
           <div>
             <div>
@@ -41,7 +42,11 @@ const Login = () => {
         </form>
         <div className="account">
           <p>Don't have an account?</p>
-          <button>Register</button>
+          <button>
+            <Link to="/" className="link">
+              Register
+            </Link>
+          </button>
         </div>
       </div>
     </div>

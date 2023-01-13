@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import CustomInput from "../../components/customInput/CustomInput";
 import Dice from "../../assets/images/dice.svg";
 import Eye from "../../assets/images/eye.svg";
@@ -16,7 +17,7 @@ const Register = () => {
       <div className="register_box">
         <img src={Dice} alt="Logo" />
         <h1>Hi, Welcome</h1>
-        <span>Please sign-up to your account and start your experience</span>
+        <span>Please sign-in to your account and start your experience</span>
         <form className="regForm">
           <div>
             <CustomInput
@@ -41,7 +42,11 @@ const Register = () => {
         </form>
         <div className="account">
           <p>Already have an account?</p>
-          <button>Login</button>
+          <button>
+            <Link to="/login" className="link">
+              Login
+            </Link>
+          </button>
         </div>
       </div>
     </div>
