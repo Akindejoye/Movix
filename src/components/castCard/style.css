@@ -1,0 +1,29 @@
+.castCard {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.castCard__card-box {
+  max-width: 250px;
+  min-height: 405px;
+  background-color: #e4e4e425;
+}
+
+.display__card-box > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.display__cardbox > h2 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23px;
+  color: var(--black-200);
+  text-align: left;
+}
+
+.castCard__card-box-3 {
+  width: 250px;
+}
