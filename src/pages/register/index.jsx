@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase-config";
+import { Link, useNavigate } from "react-router-dom";
 import CustomInput from "../../components/customInput/CustomInput";
 import Dice from "../../assets/images/dice.svg";
 import Eye from "../../assets/images/eye.svg";
@@ -7,9 +9,30 @@ import "./style.css";
 
 const Register = () => {
   const [togglePassword, setTogglePassword] = useState(false);
+  const [registerName, setRegisterName] = useState("");
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handletogglePassword = () => {
     setTogglePassword(!togglePassword);
+  };
+
+  const register = async (e) => {
+    e.preventDefault();
+
+    try {
+      const user = await createUserWithEmailAndPassword(
+        auth,
+        registerEmail,
+        registerPassword
+      );
+      console.log(user);
+      navigate("/home");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -23,13 +46,23 @@ const Register = () => {
             <CustomInput
               type="text"
               placeholder="Full Name"
-              name="accountNumber"
+              name="registerName"
+              value={registerName}
+              onChange={(e) => setRegisterName(e.target.value)}
             />
-            <CustomInput type="text" placeholder="Email" name="email" />
+            <CustomInput
+              type="text"
+              placeholder="Email"
+              name="registerEmail"
+              value={registerEmail}
+              onChange={(e) => setRegisterEmail(e.target.value)}
+            />
             <CustomInput
               type={togglePassword ? "text" : "password"}
               placeholder="Password"
-              name="password"
+              name="registerPassword"
+              value={registerPassword}
+              onChange={(e) => setRegisterPassword(e.target.value)}
             />
 
             <img
@@ -38,7 +71,9 @@ const Register = () => {
               onClick={handletogglePassword}
             />
           </div>
-          <button className="btn">Register</button>
+          <button className="btn" type="submit" onClick={register}>
+            Register
+          </button>
         </form>
         <div className="account">
           <p>Already have an account?</p>

@@ -1,8 +1,8 @@
 .hero {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   width: 100%;
   min-height: 600px;
-  background-image: url('../../assets/images/poster.svg');
+  background-image: url("../../assets/images/poster.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -27,7 +27,7 @@
 }
 
 .left > h3 {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 24px;
@@ -35,7 +35,6 @@
 }
 
 .center {
-
 }
 
 .center-box {
@@ -95,6 +94,15 @@
   background-color: var(--primary);
 }
 
+.right > button {
+  font-size: 14px;
+  padding: 7px;
+  color: var(--white);
+  margin-left: 15px;
+  border-radius: 10px;
+  background-color: var(--primary);
+}
+
 .middle {
   display: flex;
   justify-content: space-between;
@@ -104,7 +112,6 @@
 }
 
 .middle__left {
-  
 }
 
 .middle__left > h1 {
@@ -157,11 +164,9 @@
 }
 
 .imdb {
-
 }
 
 .apple {
-
 }
 
 .middle__left-button {

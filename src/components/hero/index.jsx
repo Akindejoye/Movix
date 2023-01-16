@@ -1,13 +1,13 @@
+import { Link } from "react-router-dom";
 import Tv from "../../assets/images/tv.svg";
 import Search from "../../assets/images/search.svg";
 import Dash from "../../assets/images/double_dash.svg";
 import Imdb from "../../assets/images/imdb.svg";
 import Apple from "../../assets/images/apple.svg";
 import Play from "../../assets/images/play.svg";
-import Single from "../../assets/images/single_dash.svg";
 import "./style.css";
 
-const Hero = () => {
+const Hero = ({ userEmail, logOut }) => {
   return (
     <div className="hero">
       <div className="top">
@@ -22,10 +22,19 @@ const Hero = () => {
           </div>
         </div>
         <div className="right">
-          <h3>Hi, Francis Akindejoye</h3>
+          <h3>{userEmail ? `Hi, ${userEmail}` : ""}</h3>
           <div>
             <img src={Dash} alt="Dash" />
           </div>
+          {userEmail ? (
+            <button onClick={logOut}>Sign out</button>
+          ) : (
+            <button onClick={logOut}>
+              <Link to="/login" className="link">
+                Sign in
+              </Link>
+            </button>
+          )}
         </div>
       </div>
       <div className="middle">
